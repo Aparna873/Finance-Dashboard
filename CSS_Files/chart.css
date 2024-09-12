@@ -1,0 +1,13 @@
+/* Style the canvas container */
+canvas {
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Customize the width and height */
+#myChart {
+    width: 100% !important;
+    height: auto !important;
+}

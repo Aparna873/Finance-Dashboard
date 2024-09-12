@@ -1,0 +1,117 @@
+<!--DASHBOARD-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD</title>
+    <link rel="stylesheet" href="/CSS_Files/style.css">
+    <link rel="stylesheet" href="/CSS_Files/chart.css">
+</head>
+<body>
+    <header>    
+
+        <h1>XseFi</h1>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="income.html">Income</a></li>
+            <li><a href="expense.html">Expenses</a></li>
+            <li><a href="saving.html">Savings Goals</a></li>
+            <li><a href="report.html">Reports</a></li>
+        </ul>
+        
+
+<!-- Button to open the login/register card -->
+<button id="openAuthButton">Login / Register</button>
+
+<!-- Placeholder for displaying the user's profile after login -->
+<div id="userProfile" class="profile-container" style="display: none;">
+    <div id="profileIcon" class="profile-avatar"></div>
+    <span id="userName"></span>
+    <div id="profileDropdown" class="dropdown" style="display: none;">
+        <button id="logoutButton">Logout</button>
+    </div>
+</div>
+
+<!-- Auth form (Login/Register) -->
+<div id="authOverlay" class="overlay" style="display: none;">
+    <div id="authCard" class="auth-card">
+        <span id="closeSign" class="close-sign">&times;</span>
+
+        <h2 id="authTitle">Login</h2>
+        <form id="authForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <div class="form-group" id="emailGroup" style="display: none;">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+
+            <button type="submit" id="submitButton">Login</button>
+        </form>
+
+        <button id="toggleButton">Switch to Register</button>
+    </div>
+</div>
+
+
+        
+    </nav>
+</header>
+    <main>
+        <section class="Financial-Data">
+            <div class="item">
+                 <h3>Current Balance</h3>
+                 <p id="current-balance">Rs.<span>0.00</span></p>
+            </div>
+            <div class="item">
+               <h3>Total Income</h3>
+               <p id="total-income">Rs.<span>0.00</span></p>
+            </div>
+            <div class="item">
+               <h3>Total Expenses</h3>
+               <p id="total-expenses">Rs.<span>0.00</span></p>
+            </div>
+       </section>
+     <section class="Charts">
+       <canvas id="income-expense" width="400" height="200"></canvas>
+       <canvas id="expense-breakdown" width="400" height="200"></canvas>
+       <canvas id="savings-progress" width="400" height="200"></canvas>
+     </section>
+      <section class="recent-transactions">
+             <h3>Recent Transactions</h3>
+             <ul id="recent-income">
+                <li></li>
+             </ul>
+             <ul id="recent-expenses">
+                <li></li>
+             </ul>
+      </section>
+      <section class="upcomming-saving-goals">
+        <h3>Upcomming Saving Goals</h3>
+      </section>
+      <section class="alerts">
+        <h3>Alerts</h3>
+        <ul id="alert-list">
+            <!-- <li>You're nearing your monthly grocery budget.</li>
+            <li>Your vacation savings goal deadline is in 10 days.</li> -->
+        </ul>
+    </section>
+    <section>
+        <button id="add-income">Add Income</button>
+        <button id="add-expenses">Add Expense</button>
+    </section>
+    </main>
+    <script src="/JS_Files/graphs.js"></script>
+    <script src="/JS_Files/dashboard.js"></script>
+</body>
+</html>

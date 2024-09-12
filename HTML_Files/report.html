@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="/CSS_Files/report.css">
+</head>
+<body>
+    <header>
+        <h1>XseFi</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="income.html">Income</a></li>
+            <li><a href="expense.html">Expenses</a></li>
+            <li><a href="saving.html">Savings Goals</a></li>
+            <li><a href="report.html">Reports</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="report-filters">
+            <h2>Report Filters</h2>
+            <form id="reportFilters">
+                <label for="report-type">Report Type:</label>
+                <select id="report-type" name="report-type">
+                    <option value="monthly">Monthly Summary</option>
+                    <option value="income-vs-expenses">Income vs. Expenses</option>
+                    <option value="category-breakdown">Category Breakdown</option>
+                </select>
+
+                <label for="report-month">Month:</label>
+                <input type="month" id="report-month" name="report-month">
+
+                <button type="submit">Generate Report</button>
+            </form>
+        </section>
+
+        <section class="report-results">
+            <h2>Report Results</h2>
+            <div class="chart-container">
+                <canvas id="report-chart"></canvas>
+            </div>
+            <div id="report-summary">
+                <!-- Summary content will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="/JS_Files/report.js"></script>
+</body>
+</html>

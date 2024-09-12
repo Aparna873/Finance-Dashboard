@@ -1,0 +1,377 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #34495e;
+}
+
+.profile-container {
+    position: relative;
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+}
+
+.dropdown-menu a {
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+.divider {
+    height: 1px;
+    background-color: #ccc;
+    margin: 5px 0;
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px;
+}
+
+.Financial-Data {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.Financial-Data .item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.Financial-Data .item h3 {
+    margin-bottom: 10px;
+}
+
+.Financial-Data .item p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.Charts {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.Charts canvas {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.recent-transactions,
+.upcomming-saving-goals,
+.alerts {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.recent-transactions ul,
+.alerts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-transactions ul li,
+.alerts ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.recent-transactions ul li:last-child,
+.alerts ul li:last-child {
+    border-bottom: none;
+}
+
+.upcomming-saving-goals h3,
+.alerts h3,
+.recent-transactions h3 {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #4CAF50;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .profile-container {
+        position: relative;
+    }
+
+    .profile-container:hover .dropdown-menu {
+        display: block;
+    }
+
+    .Financial-Data {
+        flex-direction: column;
+    }
+
+    .Financial-Data .item {
+        width: 100%;
+    }
+
+    .Charts canvas {
+        height: 300px;
+    }
+
+    main {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+/* Overlay styling */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Auth card styling */
+.auth-card {
+    background-color: #fff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* To position close sign */
+    text-align: center;
+}
+
+/* Close sign (X) styling */
+.close-sign {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Form label and input styling */
+.auth-card label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Styling the form groups */
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label
+{
+    color:rgb(19, 16, 16);
+}
+
+/* Submit button styling */
+.auth-card button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.auth-card button:hover {
+    background-color: #45a049;
+}
+
+/* Button to toggle between login and register */
+#toggleButton {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+/* User profile container styling */
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#userName {
+    font-size: 16px;
+    font-weight: bold;
+}
+/* Dropdown styling */
+.dropdown {
+    position: absolute;
+    top: 50px; /* Adjust according to your layout */
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#logoutButton {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+#logoutButton:hover {
+    background-color: #d32f2f;
+}
+/* Profile Icon Styling */
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Makes the profile image a circle */
+    background-color: #3498db; /* Choose any color for the icon background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
